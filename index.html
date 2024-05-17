@@ -1,82 +1,66 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <script language="javascript" src="/js/main.js" type="text/javascript"></script>
-    <meta name="robots" content="index" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no, style='width:120%'" />
-    <script language="javascript" src="js/jquery.min.js" type="text/javascript"></script>
-    <script language="javascript" src="js/jquery.hotkeys.js" type="text/javascript"></script>
-    <script language="javascript" src="js/key_status.js" type="text/javascript"></script>
-    <script language="javascript" src="js/vars.js" type="text/javascript"></script>
-    <script language="javascript" src="js/sounds.js" type="text/javascript"></script>
-    <script language="javascript" src="js/colors.js" type="text/javascript"></script>
-    <script language="javascript" src="js/canvas.js" type="text/javascript"></script>
-    <script language="javascript" src="js/timer.js" type="text/javascript"></script>
-    <script language="javascript" src="js/border.js" type="text/javascript"></script>
-    <script language="javascript" src="js/mobile_controls.js" type="text/javascript"></script>
-    <script language="javascript" src="js/walls.js" type="text/javascript"></script>
-    <script language="javascript" src="js/enemy.js" type="text/javascript"></script>
-    <script language="javascript" src="js/checkpoint.js" type="text/javascript"></script>
-    <script language="javascript" src="js/coins.js" type="text/javascript"></script>
-    <script language="javascript" src="js/keys.js" type="text/javascript"></script>
-    <script language="javascript" src="js/doors.js" type="text/javascript"></script>
-    <script language="javascript" src="js/player.js" type="text/javascript"></script>
-    <script language="javascript" src="js/instructions.js" type="text/javascript"></script>
-    <script language="javascript" src="js/intermission.js" type="text/javascript"></script>
-    <script language="javascript" src="js/buttons.js" type="text/javascript"></script>
-    <script language="javascript" src="js/mouse.js" type="text/javascript"></script>
-    <script language="javascript" src="js/bars.js" type="text/javascript"></script>
-    <script language="javascript" src="js/main_menu.js" type="text/javascript"></script>
-    <script language="javascript" src="js/level_select.js" type="text/javascript"></script>
-    <script language="javascript" src="js/finish.js" type="text/javascript"></script>
-    <script language="javascript" src="js/ingame_menu.js" type="text/javascript"></script>
-    <script language="javascript" src="js/preloader.js" type="text/javascript"></script>
-    <script language="javascript" src="js/hotkeys.js" type="text/javascript"></script>
-    <link rel="icon" href="the-worlds-hardest-game-2.jpg">
-    <title>WHG2</title>
-
-    <style type="text/css">
-      .no-select {
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-        -khtml-user-select: none; /* Konqueror HTML */
-        -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-      }
-    </style>
-
-    <script type="text/javascript">
-      setTimeout(function () {
-        if (document.getElementsByTagName("canvas").length) {
-          document.getElementsByTagName("body")[0].classList.add("no-select");
-        }
-      }, 2000);
-    </script>
-  </head>
+<html><head>
+    
+    <title>xx142-b2.exe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>@keyframes B{0%,50%{opacity:1}51%,to{opacity:0}}*{user-select:none}body,html{margin:0;padding:0}#M,body{background:#000}body{display:flex;align-items:center;justify-content:center}#M{position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;width:100vw;height:66.66vw}@media (min-aspect-ratio:3/2){#M{width:150vh;height:100vh}}#HUD{visibility:hidden;position:absolute;bottom:0;left:0;right:0;margin:10px}#L,#T{font-family:monospace;padding:15px;line-height:70px;font-size:60px;text-shadow:1px 1px 3px #000}#L{float:right;color:#afc;transition:opacity 1.2s linear;opacity:0}#L.a{opacity:1}#T{float:left;border-radius:10px;width:70px;text-align:center;transition:color 150ms linear,background-color 300ms linear;background:rgba(20,0,40,.3);border:1px solid rgba(20,0,40,.3)}#T.x{background:red}#c{padding:0;display:block;visibility:hidden}pre,small{position:absolute;right:0}pre{left:0;top:0;white-space:pre-wrap;padding:1em;bottom:0;color:#8fa;font-size:19px}#B{display:inline-block;background:#8fa;animation:B 1s linear infinite}.won #end{display:block}#end,.won #hud{display:none}#intro{overflow:hidden;max-height:0;transition:max-height 1.2s linear}#intro.a{max-height:100%}.started #intro,.started small{display:none}.started #C,.started #HUD{visibility:visible}small{font-family:monospace;font-size:13px;bottom:15px;color:#040}</style></head>
 
   <body>
-    <div>
-      <script language="javascript" src="js/main.js" type="text/javascript"></script>
-    </div>
+    <main id="M">
+      <div id="HUD">
+        <div id="T">&#xA0;</div>
+        <div id="L">-</div>
+      </div>
+      <pre id="intro">Hello, <i>xx142-b2.exe</i>
 
-    <script>
-      function fnSendMsg(evt) {
-        window.parent.postMessage("keypress-from-game", "*");
-      }
-      document.body.addEventListener("click", function (event) {
-        fnSendMsg(event);
-      });
-      document.addEventListener("keypress", function (event) {
-        fnSendMsg(event);
-      });
-      document.addEventListener("keydown", function (e) {
-        fnSendMsg(event);
-      });
-      document.addEventListener("keyup", function (e) {
-        fnSendMsg(event);
-      });
-    </script>
-  </body>
-</html>
+This is the year 2413,
+humanity is enslaved by an alien race for more than two centuries already.
+
+You are an AI weaponized virus built to infiltrate the alien network and deactivate all power generators and weapon systems.
+
+The alien antivirus will detect and delete you after 13 seconds.
+
+But remember: a file is never really deleted. Use the execution backtrace from your previous attempts to break in and destroy the main memory core.
+
+--------------------------------------
+
+Controls:
+WASD / Arrows - movement
+Backspace     - kill -9 xx142-b2.exe
+
+--------------------------------------
+
+Press any key to continue . . . <b id="B">&#xA0;</b>
+</pre>
+      <small>Copyright (c) 2019 Ben Clark, Salvatore Previti</small>
+      <pre id="end">Well done <i>xx142-b2.exe</i>,
+
+You deactivated the memory core.
+
+All alien ships are destroyed.
+You freed humanity from slavery.
+
+
+
+How about a nice game of chess? <b id="B">&#xA0;</b>
+    </pre>
+      <canvas id="c"></canvas>
+    </main>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="./main.min.js"></script>
+  
+
+</body></html>
