@@ -1,4 +1,4 @@
-﻿function initPreloader() {
+function initPreloader() {
 	initImages();
 }
 
@@ -6,8 +6,8 @@ function initImages() {
     img_mainMenu             = new Image();
     img_mainMenu.src             = "images/main_menu.png";
     img_mainMenu.addEventListener            ("load", imageLoaded);
-    if (!mobile) {
-        img_mainMenu_playGame = new Image();
+    //if (!mobile) {
+       /* img_mainMenu_playGame = new Image();
         img_mainMenu_loadGame = new Image();
         img_mainMenu_levelSelect = new Image();
         //img_mainMenu_moreGames   = new Image();
@@ -19,13 +19,13 @@ function initImages() {
 
         img_mainMenu_playGame.addEventListener   ("load", imageLoaded);
         img_mainMenu_loadGame.addEventListener   ("load", imageLoaded);
-        img_mainMenu_levelSelect.addEventListener("load", imageLoaded);
+        img_mainMenu_levelSelect.addEventListener("load", imageLoaded);*/
         //img_mainMenu_moreGames.addEventListener  ("load", imageLoaded);
-    }
+   // }
 }
 
 function initSounds() {
-    if(!mobile){
+   
 	music = new Audio("sounds/music.mp3");
     music.loop = true;
 
@@ -37,23 +37,9 @@ function initSounds() {
     sfx_die          = new Audio("sounds/sfx_die.mp3");
     sfx_win          = new Audio("sounds/sfx_win.mp3");
     sfx_intermission = new Audio("sounds/sfx_intermission.mp3");
-	}
-	else {
-		
-		/*music = new Audio("sounds/music.ogg");
-    music.loop = true;
-
-    sfx_bounce0      = new Audio("sounds/sfx_bounce0.ogg");
-    sfx_bounce1      = new Audio("sounds/sfx_bounce1.ogg");
-    sfx_checkpoint   = new Audio("sounds/sfx_checkpoint.ogg");
-    sfx_click        = new Audio("sounds/sfx_click.ogg");
-    sfx_coin         = new Audio("sounds/sfx_coin.ogg");
-    sfx_die          = new Audio("sounds/sfx_die.ogg");
-    sfx_win          = new Audio("sounds/sfx_win.ogg");
-    sfx_intermission = new Audio("sounds/sfx_intermission.ogg");*/
-	alert("on mobiles it doesnt work");
+	sfx_door         = new Audio("sounds/sfx_win.mp3");
 	
-	}
+	
     soundsToMute.push(music);
     soundsToMute.push(sfx_bounce0);
     soundsToMute.push(sfx_bounce1);
@@ -63,6 +49,8 @@ function initSounds() {
     soundsToMute.push(sfx_die);
     soundsToMute.push(sfx_win);
     soundsToMute.push(sfx_intermission);
+	soundsToMute.push(sfx_door);
+	
 
     music.addEventListener           ("canplaythrough", soundLoaded);
     sfx_bounce0.addEventListener     ("canplaythrough", soundLoaded);
@@ -73,6 +61,8 @@ function initSounds() {
     sfx_die.addEventListener         ("canplaythrough", soundLoaded);
     sfx_win.addEventListener         ("canplaythrough", soundLoaded);
     sfx_intermission.addEventListener("canplaythrough", soundLoaded);
+	sfx_door.addEventListener("canplaythrough", soundLoaded);
+	
 }
 
 function imageLoaded() {
@@ -80,11 +70,11 @@ function imageLoaded() {
     loadedAssets++;
     if (loadedImages >= TOTAL_IMAGES) {
         img_mainMenu.removeEventListener            ("load", imageLoaded);
-        if (!mobile) {
+       /* if (!mobile) {
             img_mainMenu_playGame.removeEventListener("load", imageLoaded);
             img_mainMenu_loadGame.removeEventListener("load", imageLoaded);
             img_mainMenu_levelSelect.removeEventListener("load", imageLoaded);
-        }
+        }*/
         initSounds();
     }
 }
@@ -103,6 +93,8 @@ function soundLoaded() {
 		sfx_die.removeEventListener         ("canplaythrough", soundLoaded);
 		sfx_win.removeEventListener         ("canplaythrough", soundLoaded);
 		sfx_intermission.removeEventListener("canplaythrough", soundLoaded);
+		sfx_door.removeEventListener("canplaythrough", soundLoaded);
+		
 	}
 }
 
@@ -166,7 +158,7 @@ function drawPreloader() {
     canvas.fillStyle = "white";
 	canvas.font = cwh(16) + "px Arial";
 	canvas.textAlign = "center";
-	canvas.fillText("This is The World's Hardest Game.", cwh(CANVAS_WIDTH / 2) + os.x, cwh(310) + os.y);
+	canvas.fillText("This is The World's Hardest Game 2.", cwh(CANVAS_WIDTH / 2) + os.x, cwh(310) + os.y);
 	canvas.fillText("It is harder than any game you have", cwh(CANVAS_WIDTH / 2) + os.x, cwh(330) + os.y);
 	canvas.fillText("ever played, or ever will play.", cwh(CANVAS_WIDTH / 2) + os.x, cwh(350) + os.y);
 }

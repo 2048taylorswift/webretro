@@ -2,24 +2,77 @@ const BOTTOM_BUTTONS_Y = cwh(CANVAS_HEIGHT - BAR_HEIGHT - 10);
 const BOTTOM_FONT = cwh(20) + "px Arial";
 
 function drawMainMenu() {
-  // music
-  if (firstTimeOnMainMenu && !muteMusic) {
-    music.play();
-    firstTimeOnMainMenu = false;
-  }
+	
+	// music
+	if (firstTimeOnMainMenu && !muteMusic) {
+		music.play();
+		firstTimeOnMainMenu = false;
+	}
+	
+	// buttons
+    /*if (!mobile) {
+        if (onButton("mm_playGame"))
+            canvas.drawImage(img_mainMenu_playGame, 0, BAR_HEIGHT);
+        else if (onButton("mm_loadGame"))
+            canvas.drawImage(img_mainMenu_loadGame, 0, BAR_HEIGHT);
+        else if (onButton("mm_levelSelect"))
+            canvas.drawImage(img_mainMenu_levelSelect, 0, BAR_HEIGHT);
+        else if (onButton("mm_moreGames"))
+            canvas.drawImage(img_mainMenu_moreGames, 0, BAR_HEIGHT);
+        else
+            canvas.drawImage(img_mainMenu, 0, BAR_HEIGHT);
+    } else {*/
+        canvas.drawImage(img_mainMenu, os.x,  os.y, cwh(MENU_IMG_WIDTH), cwh(MENU_IMG_HEIGHT));
+   // }
 
-  // buttons
-  if (!mobile) {
-    if (onButton("mm_playGame")) canvas.drawImage(img_mainMenu_playGame, 0, BAR_HEIGHT);
-    else if (onButton("mm_loadGame")) canvas.drawImage(img_mainMenu_loadGame, 0, BAR_HEIGHT);
-    else if (onButton("mm_levelSelect")) canvas.drawImage(img_mainMenu_levelSelect, 0, BAR_HEIGHT);
-    else if (onButton("mm_moreGames")) canvas.drawImage(img_mainMenu_moreGames, 0, BAR_HEIGHT);
-    else canvas.drawImage(img_mainMenu, 0, BAR_HEIGHT);
-  } else {
-    canvas.drawImage(img_mainMenu, os.x, cwh(BAR_HEIGHT) + os.y, cwh(MENU_IMG_WIDTH), cwh(MENU_IMG_HEIGHT));
-  }
+	   if (onButton("mm_playGame"))
+                canvas.fillStyle = BARS_BUTTON_HOVER_COLOR;
+       else
+                canvas.fillStyle = "black";
+			
+            canvas.font = "36px Arial";
+			
+            canvas.textAlign = "left";
+            canvas.fillText("PLAY LEVEL 1", MENU_IMG_WIDTH/2 -MENU_IMG_WIDTH/2 +30, CANVAS_HEIGHT/2);
 
-  /*
+            canvas.beginPath();
+            //canvas.rect(153, 491, 20, 3);
+            canvas.fill();
+			
+			
+	   if (onButton("mm_levelSelect"))
+                canvas.fillStyle = BARS_BUTTON_HOVER_COLOR;
+       else
+                canvas.fillStyle = "black";
+			
+            canvas.font = "36px Arial";
+            canvas.textAlign = "left";
+            canvas.fillText("LEVEL SELECT", MENU_IMG_WIDTH/2 -MENU_IMG_WIDTH/2 + 30 , CANVAS_HEIGHT/2 + 50);
+
+            canvas.beginPath();
+            //canvas.rect(153, 491, 20, 3);
+            canvas.fill();
+
+      
+
+
+        if (onButton("mm_mute2"))
+                canvas.fillStyle = BARS_BUTTON_HOVER_COLOR;
+        else
+                canvas.fillStyle = "black";
+            canvas.font = "36px Arial";
+            canvas.textAlign = "left";
+            if (muteSFX && muteMusic) {
+                canvas.fillText("UNMUTE", MENU_IMG_WIDTH/2 -MENU_IMG_WIDTH/2 +30 , CANVAS_HEIGHT/2 + 150);
+            } else {
+                canvas.fillText("MUTE", MENU_IMG_WIDTH/2 -MENU_IMG_WIDTH/2 +30 , CANVAS_HEIGHT/2 + 150);
+            }
+            canvas.beginPath();
+            //canvas.rect(704, 591, 25, 3);
+            canvas.fill();
+
+			
+   /*       
 	// bottom text - label
 	canvas.fillStyle = "black";
 	canvas.font = BOTTOM_FONT;

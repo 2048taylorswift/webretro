@@ -1,4 +1,5 @@
 
+
 var touchOn = false;
 var touchStartX = null;
 var touchStartY = null;

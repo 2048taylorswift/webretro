@@ -1,9 +1,9 @@
 var instructions = [
 	[-1, "Touch anywhere on the screen and drag to move.", CANVAS_WIDTH / 2],
-	[2, "Collect all the coins.", CANVAS_WIDTH / 2],
-	[3, "Sometimes there's extra checkpoints to help out.", CANVAS_WIDTH / 2],
-	[4, "Sometimes going", "diagonally helps.", CANVAS_WIDTH / 4],
-	[6, "You can change the player color on the menu.", CANVAS_WIDTH / 2]
+	[-2, "Collect all the coins.", CANVAS_WIDTH / 2],
+	[-3, "Sometimes there's extra checkpoints to help out.", CANVAS_WIDTH / 2],
+	[-4, "Sometimes going", "diagonally helps.", CANVAS_WIDTH / 4],
+	[-6, "You can change the player color on the menu.", CANVAS_WIDTH / 2]
 ];
 
 function initInstructions() {
